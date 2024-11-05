@@ -7,15 +7,15 @@ const server = http.createServer((req, res) => {
 
     if (method === 'GET') {
         switch (url) {
-            case '/': fs.createReadStream('/lib/index.html').pipe(res);
+            case '/': fs.createReadStream('./lib/index.html').pipe(res);
                 break;
-            case '/main.css': fs.createReadStream('/lib/main.css').pipe(res);
+            case '/main.css': fs.createReadStream('./lib/main.css').pipe(res);
                 break;
-            case '/index.js': fs.createReadStream('/lib/index.js').pipe(res);
+            case '/index.js': fs.createReadStream('./lib/index.js').pipe(res);
                 break;
             default:
                 if (url.startsWith('/avatars/') && url.endsWith('.webp')) {
-                    fs.createReadStream(`/lib${url}`).pipe(res);
+                    fs.createReadStream(`./lib${url}`).pipe(res);
                 }
         }
     }
