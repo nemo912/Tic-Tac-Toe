@@ -1,0 +1,33 @@
+.container {
+    position: relative;
+    aspect-ratio: 1;
+
+    background-color: transparent;
+}
+
+.grid-board {
+    font-size: 0;
+    block-size: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 21px;
+    position: relative;
+    z-index: 2;
+}
+
+.svg-boarders {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.player {
+    inline-size: 100px;
+    aspect-ratio: 1;
+}
+
+.player-container {
+    display: flex;
+    gap: 180px;
+}

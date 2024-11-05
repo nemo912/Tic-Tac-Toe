@@ -1,0 +1,8 @@
+.svg-canvas {
+    position: absolute;
+    z-index: -1;
+}
+
+.svg-cross {
+    transition: stroke-dashoffset .6s;
+}

@@ -1,0 +1,203 @@
+.container {
+    margin-block-start: 30px;
+    display: grid;
+    gap: 20px;
+}
+
+.characters {
+    margin-block-start: 10vh;
+    margin-inline: auto;
+    block-size: 150px;
+    inline-size: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    user-select: none;
+    position: relative;
+}
+
+.avatar-container {
+    display: flex;
+    overflow: clip;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 2px);
+    block-size: 100px;
+    aspect-ratio: 1;
+
+    position: relative;
+    z-index: 0;
+}
+
+.selected-avatar-container_B {
+    display: flex;
+    overflow: clip;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 2px);
+    animation: selecting-b .25s forwards ease-out;
+    block-size: 110px;
+    aspect-ratio: 1;
+
+    position: relative;
+    z-index: 1;
+}
+
+.selected-avatar-container_F {
+    display: flex;
+    overflow: clip;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 2px);
+    animation: selecting-f .25s forwards ease-out;
+    block-size: 110px;
+    aspect-ratio: 1;
+
+    position: relative;
+    z-index: 1;
+}
+
+.avatar {
+    z-index: -1;
+    inline-size: 110%;
+    block-size: 110%;
+    filter: grayscale(1);
+    box-shadow: 0 0 5px white;
+}
+
+.avatar.prev-avatar {
+    margin-inline-end: -70px;
+}
+
+.avatar.next-avatar {
+    margin-inline-start: -70px;
+}
+
+.selected-avatar {
+    inline-size: 110%;
+    block-size: 110%;
+}
+
+.prev-character,
+.next-character
+{
+    box-sizing: content-box;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    inline-size: 60px;
+    block-size: 60px;
+    padding-inline: 0;
+    padding-block: 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+}
+
+.play-button {
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding-inline: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+}
+
+.control-buttons {
+
+    & .prev-character {
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="100%25" height="100%25"%3E%3Cpath d="M6.079,22.5a1.5,1.5,0,0,1,.44-1.06l7.672-7.672a2.5,2.5,0,0,0,0-3.536L6.529,2.565A1.5,1.5,0,0,1,8.65.444l7.662,7.661a5.506,5.506,0,0,1,0,7.779L8.64,23.556A1.5,1.5,0,0,1,6.079,22.5Z"/%3E%3C/svg%3E%0A');
+        background-origin: content-box;
+        background-repeat: no-repeat;
+    }
+
+    & .next-character {
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="100%25" height="100%25"%3E%3Cpath d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"/%3E%3C/svg%3E%0A');
+        background-origin: content-box;
+        background-repeat: no-repeat;
+    }
+}
+
+.user-input{
+    inline-size: fit-content;
+    margin-inline: auto;
+    margin-block: 20px 90px;
+    position: relative;
+
+    &::after {
+        content: '';
+        inline-size: 100%;
+        border-radius: 2px;
+        border-bottom: 3px solid #ffffffc0;
+        filter: drop-shadow(0 0 2px #fff);
+
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: border-bottom .3s;
+    }
+}
+
+.user-input-field {
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #ffffffe1;
+    background-color: transparent;
+}
+
+
+.user-input:has(.user-input-field:focus)::after {
+    border-bottom: 3px solid #a0f0ff99;
+}
+
+.user-input-field::placeholder {
+    color: #ffffff6c;
+}
+
+@keyframes selecting-b {
+    0% {
+        margin-inline-start: -80px;
+    }
+
+    70% {
+        block-size: 165px;
+        margin-inline-end: 0;
+    }
+
+    100% {
+        block-size: 150px;
+    }
+}
+
+@keyframes selecting-f {
+    0% {
+        margin-inline-end: -80px;
+    }
+
+    80% {
+        block-size: 165px;
+        margin-inline-end: 0;
+    }
+
+    100% {
+        block-size: 150px;
+    }
+}
+
+
+@media (max-width: 560px) {
+    .control-buttons {
+        padding-inline: 6px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 560px) {
+    .control-buttons {
+        display: flex;
+        gap: 60px;
+        justify-content: space-around;
+    }
+}

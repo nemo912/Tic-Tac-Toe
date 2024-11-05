@@ -1,0 +1,21 @@
+.container {
+    block-size: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #121212;
+}
+
+.loading-anim {
+    inline-size: 100px;
+    block-size: 100px;
+}
+
+.search {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: hsl(0deg 100% 100% / .4);
+}
