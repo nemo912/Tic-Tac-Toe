@@ -6,6 +6,8 @@
 **&rarr; [UI Components](#ui-components)**\
 **&rarr; [Server Components](#server-components)**
 
+you can start from here: [GameServer](#gameserver)
+
 ---
 
 ## Server Components
@@ -42,14 +44,14 @@
 
 - **Source Code:** [components/OnlineTicTacToe.jsx](/components/OnlineTicTacToe.jsx)
 
-it will render `<TicTacToe />` based on data from `useGameServerConnection` (my custom hook)\
+it will render `<TicTacToe />` based on data from `useGameServerConnection` (my custom hook)
 
 \+ your should also provide it with a player:
 > an object representing who wants play...
 ```js
 {
   username: 'your_name',
-  character: /[0-10]/,   /* we only have 11 character */
+  character: /[0-10]/,   /* we only have 11 characters */
 }
 ```
 ### TicTacToe(size, board, onBoardUpdate, onGameEnd)
