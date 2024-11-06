@@ -12,22 +12,24 @@
 
 ### GameServer
 
-```
-  extends <ws>
-```
+- Extends [`ws`](https://github.com/websockets/ws/blob/master/doc/ws.md)\
+**Source Code:** [server/game_server.cjs](/server/game_server.cjs)
+
 
 | Property | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `_queue` | `array[]` | waiting players are store here until match against another player |
 
-### Game
+### Game\
+**Source Code:** [server/game.cjs](/server/game.cjs)
 
 | Property | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `pX` | `Player` | in Tic Tac Toe this is the 'X' player |
 | `pO` | `Player` | and this is 'O' |
 
-### Player
+### Player\
+**Source Code:** [server/player.cjs](/server/player.cjs)
 
 | Property | Type     | Description                |
 | :-------- | :------- | :------------------------- |
@@ -37,7 +39,11 @@
 
 ## UI Components
 ### OnlineTicTacToe(player)
-it will render <TicTacToe /> based on data from useGameServerConnection (my custom hook)\
+
+**Source Code:** [components/OnlineTicTacToe.jsx](/components/OnlineTicTacToe.jsx)\
+
+it will render `<TicTacToe />` based on data from useGameServerConnection (my custom hook)\
+\
 \+ your should also provide it with a player:\
 an object representing who wants play
 ```js
@@ -47,6 +53,9 @@ an object representing who wants play
 }
 ```
 ### TicTacToe(size, board, onBoardUpdate, onGameEnd)
+
+**Source Code:** [components/TicTacToe.jsx](/components/TicTacToe.jsx)\
+
 it will render a 3x3 grid based on it's props:
 
 | Parameter | Description                |
