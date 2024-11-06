@@ -3,8 +3,8 @@
 
 > this is a brief documentation about this project!
 
-**? frontend ==> [UI Components](#ui-components)**\
-**? backend ==> [Server Components](#server-components)**
+**? frontend &rarr; [UI Components](#ui-components)**\
+**? backend &rarr; [Server Components](#server-components)**
 
 ---
 
