@@ -1,3 +1,13 @@
 {
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@compo/*": ["./components/*"],
+      "@styl/*": ["./stylesheets/*"],
+      "@util/*": ["./uril/*"],
+      "@hooks/*": ["./hooks/*"]
+    }
+  },
+
   "exclude": ["node_modules", "lib"]
 }
