@@ -42,9 +42,9 @@
 
 **Source Code:** [components/OnlineTicTacToe.jsx](/components/OnlineTicTacToe.jsx)
 
-it will render `<TicTacToe />` based on data from `useGameServerConnection` (my custom hook)
-\
-\+ your should also provide it with a player:\
+it will render `<TicTacToe />` based on data from `useGameServerConnection` (my custom hook)\
+
+\+ your should also provide it with a player:
 > an object representing who wants play...
 ```js
 {
