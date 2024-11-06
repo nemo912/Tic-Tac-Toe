@@ -12,7 +12,7 @@
 
 ### GameServer
 
-- Extends [`ws`](https://github.com/websockets/ws/blob/master/doc/ws.md)
+- Extends: [`<ws>`](https://github.com/websockets/ws/blob/master/doc/ws.md)
 ---
 **Source Code:** [server/game_server.cjs](/server/game_server.cjs)
 
