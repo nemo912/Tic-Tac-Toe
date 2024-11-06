@@ -49,7 +49,7 @@ it will render `<TicTacToe />` based on data from `useGameServerConnection` (my 
 ```js
 {
   username: 'your_name',
-  character: /[0-10]/,   /* we only have 11 character */
+  character: /[0-10]/,   /* we only have 11 characters */
 }
 ```
 ### TicTacToe(size, board, onBoardUpdate, onGameEnd)
