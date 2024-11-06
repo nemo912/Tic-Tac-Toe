@@ -14,6 +14,7 @@ function initGameServer(server) {
 
 
         this._queue.push({ ws: ws, name: username, char: character });
+
         console.log('--new player connection--');
         console.log(`server queue: ${this._queue.length}`);
 

@@ -1,5 +1,7 @@
 import { createElement } from 'react';
 
+/* I just write it for fun 😉 */
+
 export function repeatCompo(size, compo, transformList) {
 
     return Array.from(Array(size), (_, i) => {

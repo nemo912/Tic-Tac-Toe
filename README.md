@@ -21,7 +21,7 @@
 | `_queue` | `array[]` | waiting players are store here until match against another player |
 
 ### Game
-**Source Code:** [server/game.cjs](/server/game.cjs)
+- **Source Code:** [server/game.cjs](/server/game.cjs)
 
 | Property | Type     | Description                |
 | :-------- | :------- | :------------------------- |
@@ -29,7 +29,7 @@
 | `pO` | `Player` | and this is 'O' |
 
 ### Player
-**Source Code:** [server/player.cjs](/server/player.cjs)
+- **Source Code:** [server/player.cjs](/server/player.cjs)
 
 | Property | Type     | Description                |
 | :-------- | :------- | :------------------------- |
@@ -40,7 +40,7 @@
 ## UI Components
 ### OnlineTicTacToe(player)
 
-**Source Code:** [components/OnlineTicTacToe.jsx](/components/OnlineTicTacToe.jsx)
+- **Source Code:** [components/OnlineTicTacToe.jsx](/components/OnlineTicTacToe.jsx)
 
 it will render `<TicTacToe />` based on data from `useGameServerConnection` (my custom hook)\
 
@@ -54,7 +54,7 @@ it will render `<TicTacToe />` based on data from `useGameServerConnection` (my 
 ```
 ### TicTacToe(size, board, onBoardUpdate, onGameEnd)
 
-**Source Code:** [components/TicTacToe.jsx](/components/TicTacToe.jsx)
+- **Source Code:** [components/TicTacToe.jsx](/components/TicTacToe.jsx)
 
 it will render a 3x3 grid based on it's props:
 

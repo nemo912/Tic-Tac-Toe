@@ -17,7 +17,7 @@ function startServerConnection(...rest) {
     return ws;
 }
 
-/* prevent useless state update */
+
 let isFirstMessage = true;
 
 function handleIncomingMessage(message, rest) {

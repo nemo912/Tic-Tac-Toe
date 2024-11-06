@@ -1,20 +1,21 @@
-export default function AvatarList({ selected, backwards, style }) {
+export default function AvatarList({ selected, isBackwards, style }) {
+    const offset = 2;
 
-    let num = selected - 2;
-    if (num < 0) num += 11;
+    let startPosition = selected - offset;
+    if (startPosition < 0) startPosition += 11; /* length of array */
 
     const list = Array.from(Array(5), (_, i) => {
         const item = <div
-            className={i === 2 ? (backwards ? style.selectedAvatarContainerB : style.selectedAvatarContainerF) : style.avatarContainer} key={num} >
+            className={i === offset ? (isBackwards ? style.selectedAvatarContainerB : style.selectedAvatarContainerF) : style.avatarContainer} key={num} >
             <img
-            src={`/avatars/${num}.webp`}
-            className={`${i === 2 ? style.selectedAvatar : style.avatar} ${i < 2 ? style.prevAvatar : style.nextAvatar}`}
+            src={`/avatars/${startPosition}.webp`}
+            className={`${i === offset ? style.selectedAvatar : style.avatar} ${i < offset ? style.prevAvatar : style.nextAvatar}`}
             draggable="false"
             loading="lazy"
         />
         </div>;
 
-        num = (num + 1) % 11;
+        startPosition = (startPosition + 1) % 11;
 
         return item;
     });

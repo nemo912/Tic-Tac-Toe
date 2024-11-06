@@ -9,7 +9,6 @@ export default function OnlineTicTacToe({ player, onBackToHome }) {
 
   const [nthMatch, setNthMatch] = useState(0);
   const data = useGameServerConnection(`/server?name=${player.username}&char=${player.character}`, nthMatch);
-  console.log('onlineTicTacToe ------------------', data);
 
   function handleBoardUpdate(index) {
     if (data.isActivePlayer && data.board[index] === '') {

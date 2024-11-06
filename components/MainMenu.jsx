@@ -9,7 +9,7 @@ export default function MainMenu({ onPlay }) {
   const isBackward = useRef(false);
 
   useEffect(() => {
-    setTimeout(() => usernameField.current.focus(), 800);
+    usernameField.current.focus();
   }, []);
 
   function scrollToNext() {
@@ -30,7 +30,7 @@ export default function MainMenu({ onPlay }) {
     <div className={s.container}>
 
       <div className={s.characters}>
-        <AvatarList selected={selected} backwards={isBackward.current} style={s} />
+        <AvatarList selected={selected} isBackwards={isBackward.current} style={s} />
       </div>
       
       <div className={s.userInput}>

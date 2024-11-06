@@ -1,7 +1,10 @@
-let moves = -1;
+let moves = -1; /* prevent useless Array.every check -- line 19 -- */
+
 export function checkForWin(board, cb, isRestart) {
     if (isRestart) moves = -1;
-    let x = false; moves++;
+
+    let x = false;
+    moves++;
 
     winningConditions.forEach((condition) => {
         const [a, b, c] = condition;
@@ -13,9 +16,10 @@ export function checkForWin(board, cb, isRestart) {
             cb(board[a]);
         }
     });
+
     if (x) return;
     
-    if (moves === 9) cb('draw');
+    if (moves === 9) cb('draw');                        /* -- 19 -- */
 }
 
 const winningConditions = [

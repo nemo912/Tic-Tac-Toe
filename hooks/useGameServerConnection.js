@@ -1,11 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 export function useGameServerConnection(url, nthMatch) {
     let ws = null;
     const [data, setData] = useState({ serverStatus: 'connecting', stateOfGame: '', updateGameState: handleGameState, closeGameServer: closeThisGame });
 
     useEffect(() => {
-        console.log('useEffect for gameServerConnection');
 
         ws = new WebSocket(url);
         setData({ serverStatus: 'connecting', stateOfGame: '', updateGameState: handleGameState, closeGameServer: closeThisGame });
@@ -92,7 +91,7 @@ export function useGameServerConnection(url, nthMatch) {
         }
 
         else {
-            console.log('server send message!');
+            console.log('server send normal!');
             setData(d => {
                 return (
                     {
