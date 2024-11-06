@@ -6,6 +6,8 @@
 **&rarr; [UI Components](#ui-components)**\
 **&rarr; [Server Components](#server-components)**
 
+you can start from here: [GameServer](#gameserver)
+
 ---
 
 ## Server Components
