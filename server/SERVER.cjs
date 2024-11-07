@@ -21,18 +21,22 @@ const routes = {
 }
 
 app.get('/', (req, res) => {
+    res.set('Content-Type', 'text/html')
     res.end(routes['/']);
 });
 
 app.get('/main.css', (req, res) => {
+    res.set('Content-Type', 'text/css')
     res.end(routes['/main.css']);
 });
 
 app.get('/index.js', (req, res) => {
+    res.set('Content-Type', 'text/javascript')
     res.end(routes['/index.js']);
 });
 
 app.get(/\/avatars\/[0-9]|10.webp/, (req, res) => {
+    res.set('Content-Type', 'image/webp');
     res.end(routes.avatars[req.path]);
 });
 
