@@ -24,21 +24,23 @@ const server = http.createServer((req, res) => {
 
     if (method === 'GET') {
         switch (url) {
-            case '/': res.end(routes[url]);
+            case '/': res.setHeader('Content-Type', 'text/html').end(routes[url]);
                 break;
-            case '/main.css': res.end(routes[url]);
+            case '/main.css': res.setHeader('Content-Type', 'text/css').end(routes[url]);
                 break;
-            case '/index.js': res.end(routes[url])
+            case '/index.js': res.setHeader('Content-Type', 'text/javascipt').end(routes[url])
                 break;
             default:
                 if (url.startsWith('/avatars/') && url.endsWith('.webp')) {
-                    res.end(routes.avatars[url]);
+                    res.setHeader('Content-Type', 'image/webp').end(routes.avatars[url]);
                 }
+
+                else (res.statusCode = 404, res.end());
         }
     }
 });
 
-const PORT = process.env.PORT | 3000;
+const PORT = 80;
 server.listen(PORT, '0.0.0.0', () => { console.log('server is running...', server.address()) });
 
 GameServer({ server: server });
