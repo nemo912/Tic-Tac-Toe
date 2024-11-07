@@ -1,6 +1,5 @@
 const http = require('node:http');
 const fs = require('node:fs');
-const GameServer = require('./game_server.cjs');
 
 const server = http.createServer((req, res) => {
     const { method, url } = req;
@@ -26,6 +25,4 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(80, '0.0.0.0', () => { console.log('server is running...', server.address()) });
-
-GameServer({ server: server, path: '/server' });
 
