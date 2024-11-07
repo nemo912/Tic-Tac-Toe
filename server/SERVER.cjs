@@ -20,47 +20,24 @@ const routes = {
     '/index.js': fs.readFileSync('./lib/index.js'),
 }
 
-app.get('/', (req, res) => {
-    res.set('Content-Type', 'text/html')
-    res.end(routes['/']);
+const server = http.createServer((req, res) => {
+    const { method, url } = req;
+
+    if (method === 'GET') {
+        switch (url) {
+            case '/': res.setHeader('Content-Type', 'text/html').end(routes[url]);
+                break;
+            case '/main.css': res.setHeader('Content-Type', 'text/css').end(routes[url]);
+                break;
+            case '/index.js': res.setHeader('Content-Type', 'text/javascript').end(routes[url]);
+                break;
+            default:
+                if (url.startsWith('/avatars/') && url.endsWith('.webp')) {
+                    res.end(routes.avatars[url]);
+                }
+        }
+    }
 });
 
-app.get('/main.css', (req, res) => {
-    res.set('Content-Type', 'text/css')
-    res.end(routes['/main.css']);
-});
-
-app.get('/index.js', (req, res) => {
-    res.set('Content-Type', 'text/javascript')
-    res.end(routes['/index.js']);
-});
-
-app.get(/\/avatars\/[0-9]|10.webp/, (req, res) => {
-    res.set('Content-Type', 'image/webp');
-    res.end(routes.avatars[req.path]);
-});
-
-app.listen(80, () => console.log('server is running...'));
-
-
-// const server = http.createServer((req, res) => {
-//     const { method, url } = req;
-
-//     if (method === 'GET') {
-//         switch (url) {
-//             case '/': res.end(routes[url]);
-//                 break;
-//             case '/main.css': res.end(routes[url]);
-//                 break;
-//             case '/index.js': res.end(routes[url])
-//                 break;
-//             default:
-//                 if (url.startsWith('/avatars/') && url.endsWith('.webp')) {
-//                     res.end(routes.avatars[url]);
-//                 }
-//         }
-//     }
-// });
-
-// server.listen(80, '0.0.0.0', () => { console.log('server is running...', server.address()) });
+server.listen(80, '0.0.0.0', () => { console.log('server is running...', server.address()) });
 
