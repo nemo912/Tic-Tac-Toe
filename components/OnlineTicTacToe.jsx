@@ -33,11 +33,11 @@ export default function OnlineTicTacToe({ player, onBackToHome }) {
       <PauseMenu stateOfGame={data.stateOfGame} onRematch={() => setNthMatch(n => n + 1)} onBackToHome={onBackToHome} />
 
       <div className={s.container}>
-        
+
         <div className={s.wrapper}>
-          <Player player={player} />
-          <span className={s.divider}>vs</span>
-          <Player player={data.opponent} />
+          <Player player={player} onMessage={null} />
+          <span className={s.divider}>vs</span>                      {/* Todo --> players should be able to send message to each other */}
+          <Player player={data.opponent} message={null} />
         </div>
 
         <div className={s.ticTacToeContainer}>
@@ -57,7 +57,8 @@ export default function OnlineTicTacToe({ player, onBackToHome }) {
   }
 }
 
-function Player({ player }) {
+function Player({ player, onMessage, message }) {
+
   return (
     <div className={s.playerContainer}>
       <div className={s.playerWrapper}>

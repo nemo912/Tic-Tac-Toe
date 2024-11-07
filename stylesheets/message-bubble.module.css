@@ -1,0 +1,17 @@
+.messageBubble {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    border: 2px solid #ffffff90;
+    color: #ffffffc0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        border: 4px solid transparent;
+        border-block-end-color: #ffffff90;
+        top: -8px;
+        left: 20px;
+    }
+}
