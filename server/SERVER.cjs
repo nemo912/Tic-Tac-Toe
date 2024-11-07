@@ -1,8 +1,5 @@
 const http = require('node:http');
 const fs = require('node:fs');
-const express = require('express');
-
-const app = express();
 
 const avatars = {};
 const _avas = Array.from(Array(11), (_, i) => {
@@ -39,5 +36,6 @@ const server = http.createServer((req, res) => {
     }
 });
 
-server.listen(80, '0.0.0.0', () => { console.log('server is running...', server.address()) });
+const PORT = process.env.PORT | 80;
+server.listen(PORT, '0.0.0.0', () => { console.log('server is running...', server.address()) });
 
