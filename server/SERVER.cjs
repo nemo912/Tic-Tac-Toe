@@ -8,13 +8,17 @@ const server = http.createServer((req, res) => {
     if (method === 'GET') {
         switch (url) {
             case '/': fs.createReadStream('./lib/index.html').pipe(res);
+                console.log('request:', url, 'sends: ./lib/index.html');
                 break;
             case '/main.css': fs.createReadStream('./lib/main.css').pipe(res);
+            console.log('request:', url, 'sends: ./lib/main.css');
                 break;
             case '/index.js': fs.createReadStream('./lib/index.js').pipe(res);
+            console.log('request:', url, 'sends: ./lib/index/js');
                 break;
             default:
                 if (url.startsWith('/avatars/') && url.endsWith('.webp')) {
+                    console.log('request:', url, 'sends: ./lib/avatar.webp');
                     fs.createReadStream(`./lib${url}`).pipe(res);
                 }
         }
