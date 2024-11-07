@@ -4,6 +4,7 @@ export default function AvatarList({ selected, isBackwards, style }) {
     let position = selected - offset;
     if (position < 0) position += 11; /* length of array */
 
+    /* load only 5 character for faster page load */
     const list = Array.from(Array(5), (_, i) => {
         const item = <div
             className={i === offset ? (isBackwards ? style.selectedAvatarContainerB : style.selectedAvatarContainerF) : style.avatarContainer} key={position} >
